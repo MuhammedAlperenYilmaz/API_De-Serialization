@@ -1,69 +1,63 @@
 # API Deserialization Test Automation
 
-Welcome to the API Deserialization test automation project! This project demonstrates how to deserialize a response body into a Java object using RestAssured in Java. The code sends a PUT request to a specified URL with a path parameter, validates the response, and performs assertions on the returned data by deserializing it into a Java object.
+This project demonstrates API response deserialization using Java and RestAssured. It sends a PUT request to an API endpoint, deserializes the response body into a Java object, and validates the returned data through assertions.
 
-## Table of Contents
+## Technologies Used
 
-- [Project Description](#project-description)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
-- [Scenario](#scenario)
-    - [Test Scenario](#test-scenario)
+- **Java** – Programming language
+- **RestAssured** – REST API testing
+- **Maven or Gradle** – Dependency management, depending on project configuration
 
-## Project Description
+## Project Overview
 
-This code demonstrates how to deserialize a response body into a Java object using RestAssured in Java. It utilizes RestAssured to send a PUT request to the specified URL with a path parameter, and then deserializes the response body into a Java object. The code performs assertions on the returned data by comparing it to expected data stored in a test data repository.
+The purpose of this project is to demonstrate how API response data can be converted into Java objects and validated during automated API testing.
 
-## Usage
+The test covers the following operations:
 
-To use this code:
+- Constructing an API URL with a path parameter
+- Creating a request body
+- Sending a PUT request
+- Validating the HTTP response status
+- Deserializing the response body into a Java object
+- Comparing the returned data with expected test data
 
-1. Ensure you have the necessary dependencies installed, including RestAssured.
+## Test Scenario
 
-2. Compile and run the `API_Deserialization` class.
+### Objective
 
-3. The code sends a PUT request to the specified URL with the path parameter, validates the response, and performs assertions on the returned data by deserializing it into a Java object.
+Verify that the API response can be successfully deserialized into a Java object and that the returned data matches the expected values.
+
+### Preconditions
+
+- Java and RestAssured are configured.
+- The API endpoint is accessible.
+- The base URL, path parameter, and test data are correctly defined.
+- Required dependencies are available.
+
+### Test Steps
+
+1. **Prepare the Request:** Define the base URL, path parameter, and request body.
+2. **Send the PUT Request:** Submit the request to the specified API endpoint.
+3. **Validate the Response:** Check the HTTP status code.
+4. **Deserialize the Response:** Convert the response body into the corresponding Java object.
+5. **Perform Assertions:** Compare the returned object fields against the expected test data.
+
+### Expected Results
+
+- The API returns the expected HTTP status code.
+- The response body is successfully deserialized into a Java object.
+- The returned data matches the expected values.
+- All assertions pass.
 
 ## Dependencies
 
-This project relies on the following dependencies:
+- **RestAssured:** Used to send HTTP requests and validate API responses.
+- **Java:** Used to implement the test logic and represent response data as Java objects.
 
-- **RestAssured**: A Java library that simplifies REST API testing.
+Dependency versions and installation instructions depend on the project's build configuration.
 
-To install the dependencies, you can use a build tool such as Maven or Gradle to manage them, or you can install them manually.
+## Notes
 
-## Scenario
-
-### Test Scenario
-
-## Test Scenario: API Deserialization
-
-### Objective:
-To verify that the response body can be successfully deserialized into a Java object and perform assertions on the returned data.
-
-### Preconditions:
-- Ensure that the RestAssured library is properly installed and configured.
-- Ensure that the base URL repository and test data repository are correctly defined.
-
-### Test Steps:
-1. **Create URL and Request Body:**
-    - Define the base URL and path parameter for the API request.
-    - Create the request body for the PUT request.
-
-2. **Send PUT Request:**
-    - Send a PUT request to the specified URL with the path parameter and request body.
-
-3. **Deserialize Response:**
-    - Deserialize the response body into a Java object.
-
-4. **Perform Assertions:**
-    - Perform assertions on the returned data by comparing it to expected data stored in the test data repository.
-
-### Expected Results:
-- The PUT request should be sent successfully, and the response should have the expected status code.
-- The response body should be successfully deserialized into a Java object.
-- Assertions should pass, confirming that the returned data matches the expected data.
-
-### Notes:
-- Monitor the execution of the test to ensure that the response body is correctly deserialized and that assertions are passing as expected.
-- Review the console output and any log files generated by the test for debugging purposes.
+- Ensure that the API endpoint and test data are correctly configured before execution.
+- Review assertion failures and response details when troubleshooting test execution.
+- This project demonstrates a focused API testing technique: response deserialization and data validation.
